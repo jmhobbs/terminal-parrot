@@ -282,7 +282,7 @@ loop:
 			}
 		default:
 			draw()
-			time.Sleep(50 * time.Millisecond)
+			time.Sleep(75 * time.Millisecond)
 		}
 	}
 }
