@@ -9,6 +9,10 @@ Either grab a build on the [releases page](https://github.com/jmhobbs/terminal-p
     go get -u github.com/nsf/termbox-go
     go build -o parrot parrot.go draw.go data.go
 
+### Quitting
+
+Hit the escape key to quit.
+
 ### -loops
 
 You can limit your parrots enthusiasm with the `-loops` flag.
