@@ -18,3 +18,5 @@ You can limit your parrots enthusiasm with the `-loops` flag.
 Idea from seeing [this tweet from @rachsmithtweets](https://twitter.com/rachsmithtweets/status/742785722290212868)
 
 Thanks to [termbox-go](https://github.com/nsf/termbox-go) for making it easy.
+
+Thanks to [jp2a](https://csl.name/jp2a/) for nice ASCII art conversion.
