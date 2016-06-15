@@ -214,6 +214,19 @@ Ol;......................................;l'`,
 cNd.........................................;lOc`,
 }
 
+var colors = [...]termbox.Attribute{
+	termbox.Attribute(425),
+	termbox.Attribute(227),
+	termbox.Attribute(47),
+	termbox.Attribute(263),
+	termbox.ColorBlue,
+	termbox.Attribute(275),
+	termbox.Attribute(383),
+	termbox.Attribute(419),
+	termbox.Attribute(202),
+	termbox.Attribute(204),
+}
+
 var frame = 0
 
 func draw() {
@@ -227,7 +240,11 @@ func draw() {
 			x = 0
 			continue
 		}
-		termbox.SetCell(x, y, rune(frames[frame][index]), termbox.ColorDefault, termbox.ColorDefault)
+		if ' ' == frames[frame][index] {
+			termbox.SetCell(x, y, rune(frames[frame][index]), termbox.ColorDefault, termbox.ColorDefault)
+		} else {
+			termbox.SetCell(x, y, rune(frames[frame][index]), colors[frame], termbox.ColorDefault)
+		}
 		x++
 	}
 
@@ -251,6 +268,8 @@ func main() {
 			event_queue <- termbox.PollEvent()
 		}
 	}()
+
+	termbox.SetOutputMode(termbox.Output256)
 
 	draw()
 
