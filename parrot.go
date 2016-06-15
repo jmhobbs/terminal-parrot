@@ -232,12 +232,12 @@ var frame = 0
 func draw() {
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
 	chars := len(frames[frame])
-	x := 0
-	y := 0
+	x := 8
+	y := 1
 	for index := 0; index < chars; index++ {
 		if '\n' == frames[frame][index] {
 			y++
-			x = 0
+			x = 8
 			continue
 		}
 		if ' ' == frames[frame][index] {
