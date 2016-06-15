@@ -30,7 +30,7 @@ loop:
 	for {
 		select {
 		case ev := <-event_queue:
-			if ev.Type == termbox.EventKey && ev.Key == termbox.KeyEsc {
+			if ev.Type == termbox.EventKey && (ev.Key == termbox.KeyEsc || ev.Key == termbox.KeyCtrlC) {
 				break loop
 			}
 		default:
