@@ -59,7 +59,12 @@ loop:
 }
 
 func run_no_tty(loops int) {
-	for l := 0; l < loops; l++ {
+    loop_index := 0
+	for  {
+        loop_index++
+        if loops != 0 && loop_index == loops {
+            break
+        }
 		for i := 0; i <= 9; i++ {
 			fmt.Print(frames[i], "\n")
 			time.Sleep(75 * time.Millisecond)
