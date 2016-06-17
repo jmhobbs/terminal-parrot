@@ -1,25 +1,19 @@
 package main
 
-import "github.com/nsf/termbox-go"
-import "time"
-import "syscall"
-import "flag"
-import "unsafe"
-import "os"
-import "fmt"
-
-// Taken from https://github.com/golang/crypto/blob/master/ssh/terminal/util.go#L31
-func IsTerminal(fd int) bool {
-	var termios syscall.Termios
-	_, _, err := syscall.Syscall6(syscall.SYS_IOCTL, uintptr(fd), syscall.TIOCGETA, uintptr(unsafe.Pointer(&termios)), 0, 0, 0)
-	return err == 0
-}
+import (
+	"flag"
+	"fmt"
+	"github.com/nsf/termbox-go"
+	"golang.org/x/crypto/ssh/terminal"
+	"os"
+	"time"
+)
 
 func main() {
 	loops := flag.Int("loops", 0, "number of times to loop (default: infinite)")
 	flag.Parse()
 
-	if IsTerminal(int(os.Stdout.Fd())) {
+	if terminal.IsTerminal(int(os.Stdout.Fd())) {
 		run_termbox(*loops)
 	} else {
 		run_no_tty(*loops)
