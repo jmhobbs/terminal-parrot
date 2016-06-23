@@ -6,6 +6,7 @@ import "flag"
 
 func main() {
 	loops := flag.Int("loops", 0, "number of times to loop (default: infinite)")
+	delay := flag.Int("delay", 75, "frame delay in ms")
 	flag.Parse()
 
 	err := termbox.Init()
@@ -39,7 +40,7 @@ loop:
 				break loop
 			}
 			draw()
-			time.Sleep(75 * time.Millisecond)
+			time.Sleep(time.Duration(*delay) * time.Millisecond)
 		}
 	}
 }
