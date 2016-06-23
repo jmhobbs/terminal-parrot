@@ -1,26 +1,30 @@
 package main
 
 import "github.com/nsf/termbox-go"
+import "strings"
 
 var frame = 0
 
-func draw() {
+func reverse(lines []string) []string {
+	newLines := make([]string, len(lines))
+	for i, j := 0, len(lines)-1; i < j; i, j = i+1, j-1 {
+		newLines[i], newLines[j] = lines[j], lines[i]
+	}
+	return newLines
+}
+
+func draw(orientation string) {
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
-	chars := len(frames[frame])
-	x := 8
-	y := 1
-	for index := 0; index < chars; index++ {
-		if '\n' == frames[frame][index] {
-			y++
-			x = 8
-			continue
+	lines := strings.Split(frames[frame], "\n")
+
+	if orientation == "aussie" {
+		lines = reverse(lines)
+	}
+
+	for x, line := range lines {
+		for y, cell := range line {
+			termbox.SetCell(y, x, cell, colors[frame], termbox.ColorDefault)
 		}
-		if ' ' == frames[frame][index] {
-			termbox.SetCell(x, y, rune(frames[frame][index]), termbox.ColorDefault, termbox.ColorDefault)
-		} else {
-			termbox.SetCell(x, y, rune(frames[frame][index]), colors[frame], termbox.ColorDefault)
-		}
-		x++
 	}
 
 	termbox.Flush()

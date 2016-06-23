@@ -17,6 +17,14 @@ Hit the escape key to quit.
 
 You can limit your parrots enthusiasm with the `-loops` flag.
 
+### :fastparrot:
+
+Set the frame delay with the `-delay` flag (defaults to 75, use 25 for :fastparrot:)
+
+### :aussieparrot:
+
+Use `-orientation aussie` for our friends down under.
+
 ## Thanks
 
 Idea from seeing [this tweet from @rachsmithtweets](https://twitter.com/rachsmithtweets/status/742785722290212868)
