@@ -18,6 +18,11 @@ There is a tap for this as well, it's `jmhobbs/parrot`
     brew tap jmhobbs/parrot
     brew install terminal-parrot
 
+You can also build a docker image and run it in a container with...
+
+    docker build -t partyparrot ./
+    docker run -it --rm partyparrot (-args)
+
 ### Quitting
 
 Hit the escape key to quit.
