@@ -2,12 +2,19 @@
 
 ![demo](http://dropit.velvetcache.org.s3.amazonaws.com/jmhobbs/NzczFOYq4g/termbox-parrot-color.gif)
 
-## Using
+## Installing
 
 Either grab a build on the [releases page](https://github.com/jmhobbs/terminal-parrot/releases) or clone and run...
 
     go get -u github.com/nsf/termbox-go
     go build -o parrot parrot.go draw.go data.go
+    
+### Homebrew
+
+There is a tap for this as well, it's `jmhobbs/parrot`
+
+    brew tap jmhobbs/parrot
+    brew install terminal-parrot
 
 ### Quitting
 
