@@ -1,0 +1,3 @@
+package: github.com/dencold/terminal-parrot
+import:
+- package: github.com/nsf/termbox-go
