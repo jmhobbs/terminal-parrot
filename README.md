@@ -6,8 +6,10 @@
 
 Either grab a build on the [releases page](https://github.com/jmhobbs/terminal-parrot/releases) or clone and run...
 
-    go get -u github.com/nsf/termbox-go
-    go build -o parrot parrot.go draw.go data.go
+```bash
+$ go get -u github.com/jmhobbs/terminal-parrot
+$ terminal-parrot
+```
     
 ### Homebrew
 
