@@ -17,6 +17,10 @@ There is a tap for this as well, it's `jmhobbs/parrot`
 
     brew tap jmhobbs/parrot
     brew install terminal-parrot
+    
+### Snap Install
+
+```$ sudo snap install terminal-parrot```
 
 ### Quitting
 
