@@ -119,7 +119,6 @@ KOc,l;''''''';lldkkkkkkkkkkkkkkkkkc..;lc.
 xx:':;;;;,.,,...,;;cllllllllllllllc;'.;oo,
 cNo.....................................oc`,
 
-
 `
 
                    .ccccccc.
@@ -198,14 +197,15 @@ cNd.........................................;lOc`,
 }
 
 var colors = [num_frames]termbox.Attribute{
-	termbox.Attribute(425),
-	termbox.Attribute(227),
-	termbox.Attribute(47),
-	termbox.Attribute(263),
-	termbox.ColorBlue,
-	termbox.Attribute(275),
-	termbox.Attribute(383),
-	termbox.Attribute(419),
-	termbox.Attribute(202),
-	termbox.Attribute(204),
+	// approx colors from original gif
+	termbox.Attribute(210),   // peach
+	termbox.Attribute(222),   // orange
+	termbox.Attribute(120),   // green
+	termbox.Attribute(123),   // cyan
+	termbox.Attribute(111),   // blue
+	termbox.Attribute(134),   // purple
+	termbox.Attribute(177),   // pink
+	termbox.Attribute(207),   // fuschia
+	termbox.Attribute(206),   // magenta
+	termbox.Attribute(204),   // red
 }
