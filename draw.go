@@ -29,7 +29,7 @@ func draw(orientation string) {
 
 	termbox.Flush()
 	frame_index++
-	if frame_index > 8 {
+	if frame_index == num_frames {
 		frame_index = 0
 	}
 }
