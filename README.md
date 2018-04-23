@@ -41,3 +41,5 @@ Idea from seeing [this tweet from @rachsmithtweets](https://twitter.com/rachsmit
 Thanks to [termbox-go](https://github.com/nsf/termbox-go) for making it easy.
 
 Thanks to [jp2a](https://csl.name/jp2a/) for nice ASCII art conversion.
+
+Thanks to [erinking](https://github.com/erinking) for [fixing colors and animation frames](https://github.com/jmhobbs/terminal-parrot/pull/15)
