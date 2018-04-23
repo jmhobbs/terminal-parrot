@@ -3,7 +3,7 @@ package main
 import "github.com/nsf/termbox-go"
 import "strings"
 
-var frame = 0
+var frame_index = 0
 
 func reverse(lines []string) []string {
 	newLines := make([]string, len(lines))
@@ -15,7 +15,7 @@ func reverse(lines []string) []string {
 
 func draw(orientation string) {
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
-	lines := strings.Split(frames[frame], "\n")
+	lines := strings.Split(frames[frame_index], "\n")
 
 	if orientation == "aussie" {
 		lines = reverse(lines)
@@ -23,13 +23,13 @@ func draw(orientation string) {
 
 	for x, line := range lines {
 		for y, cell := range line {
-			termbox.SetCell(y, x, cell, colors[frame], termbox.ColorDefault)
+			termbox.SetCell(y, x, cell, colors[frame_index], termbox.ColorDefault)
 		}
 	}
 
 	termbox.Flush()
-	frame++
-	if frame > 8 {
-		frame = 0
+	frame_index++
+	if frame_index > 8 {
+		frame_index = 0
 	}
 }
