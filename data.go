@@ -2,8 +2,10 @@ package main
 
 import "github.com/nsf/termbox-go"
 
-var frames = [...]string{
-	`                         .cccc;;cc;';c.
+const num_frames = 10
+
+var frames = [num_frames]string{
+`                        .cccc;;cc;';c.
                       .,:dkdc:;;:c:,:d:.
                      .loc'.,cc::::::,..,:.
                    .cl;....;dkdccc::,...c;
@@ -22,7 +24,7 @@ var frames = [...]string{
 ,dx:..;lllllllllllllllllllllllllllllllloc'...
 cNO;........................................`,
 
-	`                .ckx;'........':c.
+`                .ckx;'........':c.
              .,:c:c:::oxxocoo::::,',.
             .odc'..:lkkoolllllo;..;d,
             ;c..:o:..;:..',;'.......;.
@@ -41,7 +43,7 @@ cNO;........................................`,
 :0o...:dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo,.:,
 cNo........................................;'`,
 
-	`            .cc;.  ...  .;c.
+`            .cc;.  ...  .;c.
          .,,cc:cc:lxxxl:ccc:;,.
         .lo;...lKKklllookl..cO;
       .cl;.,;'.okl;...'.;,..';:.
@@ -60,7 +62,7 @@ cNo........................................;'`,
   co..:dddddddddddddddddddddddddddddddddl:;''::.
   co..........................................."`,
 
-	`           .ccccccc.
+`           .ccccccc.
       .,,,;cooolccol;;,,.
      .dOx;..;lllll;..;xOd.
    .cdo,',loOXXXXXkll;';odc.
@@ -79,7 +81,7 @@ cNo..lXXXXXXXXXOolkXXXXXXXXXkl;..;:.;.
   ';.:xxxxxocccoxxxxxxxxxxxxxxxxxxxxxxl::'.';;.
   ';........................................;l'`,
 
-	`
+`
         .;:;;,.,;;::,.
      .;':;........'co:.
    .clc;'':cllllc::,.':c.
@@ -98,7 +100,7 @@ o..,l;'''''';dkkkkkkkkkkkkkkkkkkkkdlc,..;lc.
 o..;lc;;;;;;,,;clllllllllllllllllllllc'..,:c.
 o..........................................;'`,
 
-	`
+`
            .,,,,,,,,,.
          .ckKxodooxOOdcc.
       .cclooc'....';;cool.
@@ -117,7 +119,8 @@ KOc,l;''''''';lldkkkkkkkkkkkkkkkkkc..;lc.
 xx:':;;;;,.,,...,;;cllllllllllllllc;'.;oo,
 cNo.....................................oc`,
 
-	`
+
+`
 
                    .ccccccc.
                .ccckNKOOOOkdcc.
@@ -136,7 +139,7 @@ cNo.....................................oc`,
 ,dl,.'cooc:::,....,::coooooooooooc'.c:
 cNo.................................oc`,
 
-	`
+`
 
 
                         .cccccccc.
@@ -155,7 +158,7 @@ cNo.................................oc`,
 ,do:'..,:llllll:;;;;;;,..,;:lllllllll;..oc
 cNo.....................................oc`,
 
-	`
+`
 
                               .ccccc.
                          .cc;'coooxkl;.
@@ -174,7 +177,7 @@ cNo.....................................oc`,
 occ'..',:cccccccccccc:;;;;;;;;:ccccccccc,.'c,
 Ol;......................................;l'`,
 
-	`
+`
                               ,ddoodd,
                          .cc' ,ooccoo,'cc.
                       .ccldo;....,,...;oxdc.
@@ -194,7 +197,7 @@ Ol;......................................;l'`,
 cNd.........................................;lOc`,
 }
 
-var colors = [...]termbox.Attribute{
+var colors = [num_frames]termbox.Attribute{
 	termbox.Attribute(425),
 	termbox.Attribute(227),
 	termbox.Attribute(47),
