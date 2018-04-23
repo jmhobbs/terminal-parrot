@@ -118,25 +118,6 @@ xx:':;;;;,.,,...,;;cllllllllllllllc;'.;oo,
 cNo.....................................oc`,
 
 	`
-           .,,,,,,,,,.
-         .ckKxodooxOOdcc.
-      .cclooc'....';;cool.
-     .loc;;;;clllllc;;;;;:;,.
-   .c:'.,okd;;cdo:::::cl,..oc
-  .:o;';okkx;';;,';::;'....,;,.
-  co..ckkkkkddk:,cclll;.,c:,:o:.
-  co..ckkkkkkkk:,cllll;.:kkd,.':c.
-.,:;.,okkkkkkkk:,cclll;.:kkkdl;;o:.
-cNo..ckkkkkkkkko,.;llc,.ckkkkkc..oc
-,dd;.:kkkkkkkkkx;..;:,.'lkkkkko,.:,
-  ;c.ckkkkkkkkkkc.....;ldkkkkkk:.,'
-,dc..'okkkkkkkkkxoc;;cxkkkkkkkkc..,;,.
-kNo..':lllllldkkkkkkkkkkkkkkkkkdcc,.;l.
-KOc,l;''''''';lldkkkkkkkkkkkkkkkkkc..;lc.
-xx:':;;;;,.,,...,;;cllllllllllllllc;'.;oo,
-cNo.....................................oc`,
-
-	`
 
                    .ccccccc.
                .ccckNKOOOOkdcc.
