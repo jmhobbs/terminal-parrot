@@ -18,7 +18,14 @@ There is a tap for this as well, it's `jmhobbs/parrot`
     brew tap jmhobbs/parrot
     brew install terminal-parrot
 
-You can also build a docker image and run it in a container with...
+### Docker
+
+The image is available on [docker hub](https://hub.docker.com/r/jmhobbs/terminal-parrot/)
+
+    docker pull jmhobbs/terminal-parrot
+    docker run -it --rm jmhobbs/terminal-parrot:latest
+
+You can also build a docker image locally and run it in a container with...
 
     docker build -t partyparrot ./
     docker run -it --rm partyparrot (-args)
@@ -48,3 +55,5 @@ Thanks to [termbox-go](https://github.com/nsf/termbox-go) for making it easy.
 Thanks to [jp2a](https://csl.name/jp2a/) for nice ASCII art conversion.
 
 Thanks to [erinking](https://github.com/erinking) for [fixing colors and animation frames](https://github.com/jmhobbs/terminal-parrot/pull/15)
+
+Thanks to [pdevine](https://github.com/pdevine) for the [Dockerfile](https://github.com/jmhobbs/terminal-parrot/pull/12) (and [robbyoconnor](https://github.com/robbyoconnor) for reviving the PR I let go stale)
