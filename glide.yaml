@@ -1,3 +1,4 @@
-package: github.com/dencold/terminal-parrot
+package: github.com/jmhobbs/terminal-parrot
 import:
+- package: github.com/mattn/go-isatty
 - package: github.com/nsf/termbox-go
