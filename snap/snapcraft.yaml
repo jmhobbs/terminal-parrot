@@ -13,8 +13,8 @@ apps:
       - home
      
 parts: 
-  my-part:
+  terminal-parrot:
     source: .
     source-type: git
     plugin: go
-    go-importpath: github.com/kz6fittycent/terminal-parrot
+    go-importpath: https://github.com/jmhobbs/terminal-parrot
