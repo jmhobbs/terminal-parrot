@@ -1,20 +1,24 @@
-name: terminal-parrot # check to see if it's available
-version: git
-summary: Parrot for your terminal # 79 char long summary
+name: terminal-parrot 
+adopt-info: terminal-parrot
+summary: Parrot for your terminal 
 description: |
   You didn't know there was a party in your terminal, but there is! 
-grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs
+  To run, type "terminal-parrot"
+  Enjoy! 
+  
+grade: stable
+confinement: strict
 
 apps:
   terminal-parrot:
     command: terminal-parrot
-    plugs:
-      - home
-     
+
 parts: 
   terminal-parrot:
     source: .
     source-type: git
     plugin: go
     go-importpath: github.com/jmhobbs/terminal-parrot
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
