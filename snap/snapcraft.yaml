@@ -6,7 +6,10 @@ description: |
   To run, type "terminal-parrot"
   To quit, hit the `ESC` key
   Enjoy! 
-  
+
+license: MIT
+
+base: core18
 grade: stable
 confinement: strict
 
