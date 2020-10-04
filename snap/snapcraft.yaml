@@ -4,6 +4,7 @@ summary: Parrot for your terminal
 description: |
   You didn't know there was a party in your terminal, but there is! 
   To run, type "terminal-parrot"
+  To quit, hit the `ESC` key
   Enjoy! 
   
 grade: stable
