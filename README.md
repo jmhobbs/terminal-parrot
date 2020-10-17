@@ -1,3 +1,5 @@
+[![terminal-parrot](https://snapcraft.io/terminal-parrot/badge.svg)](https://snapcraft.io/terminal-parrot)
+
 # :parrot: for your terminal
 
 ![demo](http://dropit.velvetcache.org.s3.amazonaws.com/jmhobbs/NzczFOYq4g/termbox-parrot-color.gif)
