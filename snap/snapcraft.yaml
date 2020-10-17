@@ -25,4 +25,4 @@ parts:
     go-importpath: github.com/jmhobbs/terminal-parrot
     override-pull: |
       snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//')"
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
