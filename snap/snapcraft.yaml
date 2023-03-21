@@ -22,7 +22,7 @@ parts:
     source: .
     source-type: git
     plugin: go
-    go-importpath: github.com/jmhobbs/terminal-parrot
+#    go-importpath: github.com/jmhobbs/terminal-parrot
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
