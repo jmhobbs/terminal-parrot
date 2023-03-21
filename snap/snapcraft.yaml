@@ -19,7 +19,7 @@ apps:
 
 parts: 
   terminal-parrot:
-    source: .
+    source: https://github.com/jmhobbs/terminal-parrot
     source-type: git
     plugin: go
 #    go-importpath: github.com/jmhobbs/terminal-parrot
