@@ -9,13 +9,13 @@ description: |
 
 license: MIT
 
-base: core18
+base: core20
 grade: stable
 confinement: strict
 
 apps:
   terminal-parrot:
-    command: terminal-parrot
+    command: bin/terminal-parrot
 
 parts: 
   terminal-parrot:
