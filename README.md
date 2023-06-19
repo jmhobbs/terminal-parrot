@@ -10,6 +10,20 @@ Either grab a build on the [releases page](https://github.com/jmhobbs/terminal-p
 $ go get -u github.com/jmhobbs/terminal-parrot
 $ terminal-parrot
 ```
+
+### Nix
+
+#### nix-env
+
+```bash
+nix-env -i terminal-parrot
+```
+
+#### nix-profile
+
+```bash
+nix profile install nixpkgs#terminal-parrot
+```
     
 ### Homebrew
 
