@@ -13,6 +13,12 @@ base: core22
 grade: stable
 confinement: strict
 
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: s390x
+
 apps:
   terminal-parrot:
     command: bin/terminal-parrot
