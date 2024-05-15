@@ -1,7 +1,10 @@
 package main
 
-import "github.com/nsf/termbox-go"
-import "strings"
+import (
+	"strings"
+
+	"github.com/nsf/termbox-go"
+)
 
 var frame_index = 0
 
@@ -13,10 +16,18 @@ func reverse(lines []string) []string {
 	return newLines
 }
 
-func draw(orientation string) {
+func draw(orientation string, pedro bool) {
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
-	lines := strings.Split(frames[frame_index], "\n")
+	var lines []string
 
+	if pedro {
+		tempFrames, _ := GenerateFrames()
+		lines = strings.Split(tempFrames[frame_index], "\n")
+
+	} else {
+		lines = strings.Split(frames[frame_index], "\n")
+
+	}
 	if orientation == "aussie" {
 		lines = reverse(lines)
 	}

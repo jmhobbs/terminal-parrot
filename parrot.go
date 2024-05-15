@@ -7,13 +7,15 @@ import (
 	"path/filepath"
 	"time"
 
-	isatty "github.com/mattn/go-isatty"
+	"github.com/mattn/go-isatty"
 	"github.com/nsf/termbox-go"
 )
 
 func main() {
+
 	loops := flag.Int("loops", 0, "number of times to loop (default: infinite)")
 	delay := flag.Int("delay", 75, "frame delay in ms")
+	pedro := flag.Bool("pedro", false, "use racoon instead of parrot")
 	orientation := flag.String("orientation", "regular", "regular or aussie")
 	flag.Parse()
 
@@ -38,13 +40,13 @@ func main() {
 	termbox.SetOutputMode(termbox.Output256)
 
 	loop_index := 0
-	draw(*orientation)
+	draw(*orientation, *pedro)
 
 loop:
 	for {
 		select {
 		case ev := <-event_queue:
-			if (ev.Type == termbox.EventKey && (ev.Key == termbox.KeyEsc || ev.Key == termbox.KeyCtrlC)) || ev.Type == termbox.EventInterrupt {
+			if (ev.Type == termbox.EventKey && (ev.Key == termbox.KeyEsc || ev.Key == termbox.KeyCtrlC || ev.Ch == 'q')) || ev.Type == termbox.EventInterrupt {
 				break loop
 			}
 		default:
@@ -52,8 +54,9 @@ loop:
 			if *loops > 0 && (loop_index/9) >= *loops {
 				break loop
 			}
-			draw(*orientation)
+			draw(*orientation, *pedro)
 			time.Sleep(time.Duration(*delay) * time.Millisecond)
 		}
 	}
+
 }
