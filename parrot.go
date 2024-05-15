@@ -55,6 +55,7 @@ loop:
 				break loop
 			}
 			draw(*orientation, *pedro)
+
 			time.Sleep(time.Duration(*delay) * time.Millisecond)
 		}
 	}

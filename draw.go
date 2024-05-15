@@ -17,6 +17,7 @@ func reverse(lines []string) []string {
 }
 
 func draw(orientation string, pedro bool) {
+
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
 	var lines []string
 
