@@ -50,7 +50,7 @@ You can also build a docker image locally and run it in a container with...
 
 ### Quitting
 
-Hit the escape key to quit.
+Hit the escape key or the "q" key to quit.
 
 ### -loops
 
@@ -63,6 +63,10 @@ Set the frame delay with the `-delay` flag (defaults to 75, use 25 for :fastparr
 ### :aussieparrot:
 
 Use `-orientation aussie` for our friends down under.
+
+### :pedro
+
+Use `pedro` for getting a racoon instead of the default parrot image
 
 ## Thanks
 
