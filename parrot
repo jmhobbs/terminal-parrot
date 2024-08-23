@@ -1,3 +1,5 @@
+description: The classic Party Parrot.
+!--FRAME--!
                         .cccc;;cc;';c.
                       .,:dkdc:;;:c:,:d:.
                      .loc'.,cc::::::,..,:.

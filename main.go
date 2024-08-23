@@ -12,6 +12,7 @@ import (
 )
 
 func main() {
+	//framePath := flag.String("path", "/etc/terminal-parrot;/opt/homebrew/etc/terminal-parrot", "path to additional frame files")
 	loops := flag.Int("loops", 0, "number of times to loop (default: infinite)")
 	delay := flag.Int("delay", 75, "frame delay in ms")
 	orientation := flag.String("orientation", "regular", "regular or aussie")
@@ -24,11 +25,24 @@ func main() {
 	}
 
 	if *list {
+		fmt.Println("Available animations:\n")
+		longestName := 0
 		for name := range Animations {
-			fmt.Println(name)
+			longestName = max(longestName, len(name))
+		}
+		fmtString := fmt.Sprintf("  %% %ds : %%s\n", longestName)
+
+		for name, animation := range Animations {
+			description := ""
+			if mdDescription, ok := animation.Metadata["description"]; ok {
+				description = mdDescription
+			}
+			fmt.Printf(fmtString, name, description)
 		}
 		os.Exit(0)
 	}
+
+	// Load an Animation
 
 	err := termbox.Init()
 	if err != nil {
