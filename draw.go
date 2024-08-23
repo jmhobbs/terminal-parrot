@@ -24,13 +24,13 @@ func draw(animation Animation, orientation string) {
 
 	for x, line := range lines {
 		for y, cell := range line {
-			termbox.SetCell(y, x, rune(cell), colors[frame_index], termbox.ColorDefault)
+			termbox.SetCell(y, x, rune(cell), colors[frame_index%len(colors)], termbox.ColorDefault)
 		}
 	}
 
 	termbox.Flush()
 	frame_index++
-	if frame_index == len(animation.Frames) {
+	if frame_index >= len(animation.Frames) {
 		frame_index = 0
 	}
 }
