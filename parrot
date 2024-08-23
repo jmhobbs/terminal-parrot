@@ -1,11 +1,4 @@
-package main
-
-import "github.com/nsf/termbox-go"
-
-const num_frames = 10
-
-var frames = [num_frames]string{
-`                        .cccc;;cc;';c.
+                        .cccc;;cc;';c.
                       .,:dkdc:;;:c:,:d:.
                      .loc'.,cc::::::,..,:.
                    .cl;....;dkdccc::,...c;
@@ -22,9 +15,9 @@ var frames = [num_frames]string{
    .c:'..lkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkd,.oc
   .lo;,ccdkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkd,.c;
 ,dx:..;lllllllllllllllllllllllllllllllloc'...
-cNO;........................................`,
-
-`                .ckx;'........':c.
+cNO;........................................
+!--FRAME--!
+                .ckx;'........':c.
              .,:c:c:::oxxocoo::::,',.
             .odc'..:lkkoolllllo;..;d,
             ;c..:o:..;:..',;'.......;.
@@ -35,15 +28,15 @@ cNO;........................................`,
          'l;;OXXXXXXXXd'.'::'..dXXXXO;,l'
          'l;:0XXXXXXXX0x:...,:o0XXXXk,:x,
          'l;;kXXXXXXKXXXkol;oXXXXXXXO;oNc
-        ,c'..ckk0XXXXXXXXXX00XXXXXXX0:;o:.
+        ,c'..ckk2XXXXXXXXXX00XXXXXXX0:;o:.
       .':;..:dd::ooooOXXXXXXXXXXXXXXXo..c;
     .',',:co0XX0kkkxx0XXXXXXXXXXXXXXX0c..;l.
   .:;'..oXXXXXXXXXXXXXXXXXXXXXXXXXXXXXko;';:.
 .cdc..:oOXXXXXXXXKXXXXXXXXXXXXXXXXXXXXXXo..oc
 :0o...:dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo,.:,
-cNo........................................;'`,
-
-`            .cc;.  ...  .;c.
+cNo........................................;'
+!--FRAME--!
+            .cc;.  ...  .;c.
          .,,cc:cc:lxxxl:ccc:;,.
         .lo;...lKKklllookl..cO;
       .cl;.,;'.okl;...'.;,..';:.
@@ -60,9 +53,9 @@ cNo........................................;'`,
   .dOc..lKKKkoooookKKKKKKKKKKKKKKKKKKKxl,;ol.
   cx,';okKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKl..;lc.
   co..:dddddddddddddddddddddddddddddddddl:;''::.
-  co..........................................."`,
-
-`           .ccccccc.
+  co..........................................."
+!--FRAME--!
+           .ccccccc.
       .,,,;cooolccol;;,,.
      .dOx;..;lllll;..;xOd.
    .cdo,',loOXXXXXkll;';odc.
@@ -79,9 +72,9 @@ cNo..lXXXXXXXXXOolkXXXXXXXXXkl;..;:.;.
   ;c.;:''''':doOXXXXXXXXXXXXXXXXXXOdo;';clc.
   ;c.lOdood:'''oXXXXXXXXXXXXXXXXXXXXXk,..;ol.
   ';.:xxxxxocccoxxxxxxxxxxxxxxxxxxxxxxl::'.';;.
-  ';........................................;l'`,
+  ';........................................;l'
+!--FRAME--!
 
-`
         .;:;;,.,;;::,.
      .;':;........'co:.
    .clc;'':cllllc::,.':c.
@@ -98,9 +91,9 @@ d..':lxkkkkkkkkxxkkkkkkkkkkkdoc;,;'..'.,.
 o...'';llllldkkkkkkkkkkkkkkkkkkdll;..'cdo.
 o..,l;'''''';dkkkkkkkkkkkkkkkkkkkkdlc,..;lc.
 o..;lc;;;;;;,,;clllllllllllllllllllllc'..,:c.
-o..........................................;'`,
+o..........................................;'
+!--FRAME--!
 
-`
            .,,,,,,,,,.
          .ckKxodooxOOdcc.
       .cclooc'....';;cool.
@@ -117,9 +110,9 @@ cNo..ckkkkkkkkko,.;llc,.ckkkkkc..oc
 kNo..':lllllldkkkkkkkkkkkkkkkkkdcc,.;l.
 KOc,l;''''''';lldkkkkkkkkkkkkkkkkkc..;lc.
 xx:':;;;;,.,,...,;;cllllllllllllllc;'.;oo,
-cNo.....................................oc`,
+cNo.....................................oc
+!--FRAME--!
 
-`
 
                    .ccccccc.
                .ccckNKOOOOkdcc.
@@ -136,9 +129,9 @@ cNo.....................................oc`,
    ;Oc..cl'':llxOOOOOOOOdcclxOOOOx,.cd.
   .:;';lxl''''':lldOOOOOOOOOOOOOOc..oc
 ,dl,.'cooc:::,....,::coooooooooooc'.c:
-cNo.................................oc`,
+cNo.................................oc
+!--FRAME--!
 
-`
 
 
                         .cccccccc.
@@ -155,9 +148,9 @@ cNo.................................oc`,
      .:,',coxoc;;ccccoxxxxxxxxo:::oxxo,.cdc.
   .;':;.'oxxxxxc''''';cccoxxxxxxxxxkxc..oc
 ,do:'..,:llllll:;;;;;;,..,;:lllllllll;..oc
-cNo.....................................oc`,
+cNo.....................................oc
+!--FRAME--!
 
-`
 
                               .ccccc.
                          .cc;'coooxkl;.
@@ -174,9 +167,9 @@ cNo.....................................oc`,
    .cdxo;':lxxxxxxc'';cccccoxxxxxxxxxxxxo,.;lc.
   .loc'.'lxxxxxxxxocc;''''';ccoxxxxxxxxx:..oc
 occ'..',:cccccccccccc:;;;;;;;;:ccccccccc,.'c,
-Ol;......................................;l'`,
+Ol;......................................;l'
+!--FRAME--!
 
-`
                               ,ddoodd,
                          .cc' ,ooccoo,'cc.
                       .ccldo;....,,...;oxdc.
@@ -193,19 +186,4 @@ Ol;......................................;l'`,
      .dOc..,lddddddddlccc;'';cclddddddddddd;,ll.
    .coc,;::ldddddddddddddl:ccc:ldddddddddlc,ck;
 ,dl::,..,cccccccccccccccccccccccccccccccc:;':xx,
-cNd.........................................;lOc`,
-}
-
-var colors = [num_frames]termbox.Attribute{
-	// approx colors from original gif
-	termbox.Attribute(210),   // peach
-	termbox.Attribute(222),   // orange
-	termbox.Attribute(120),   // green
-	termbox.Attribute(123),   // cyan
-	termbox.Attribute(111),   // blue
-	termbox.Attribute(134),   // purple
-	termbox.Attribute(177),   // pink
-	termbox.Attribute(207),   // fuschia
-	termbox.Attribute(206),   // magenta
-	termbox.Attribute(204),   // red
-}
+cNd.........................................;lOc
