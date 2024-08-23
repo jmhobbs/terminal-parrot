@@ -64,6 +64,30 @@ Set the frame delay with the `-delay` flag (defaults to 75, use 25 for :fastparr
 
 Use `-orientation aussie` for our friends down under.
 
+## Adding Animations
+
+You can add additional animations without re-compiling by adding a plain text file somewhere on the path (by default `/etc/terminal-parrot` or `/opt/homebrew/etc/terminal-parrot`).
+
+This file should contain the frames, separated by lines containing `!--FRAME--!`.
+
+The first segment of the file is reserved for metadata, which is key-value pairs separated by `:`.
+
+For example, the following file, named `test` would add a new animation called `test`:
+
+```
+description: A test animation!
+!--FRAME--!
+[ Frame One ]
+!--FRAME--!
+[ Frame Two ]
+!--FRAME--!
+[ Frame Three ]
+```
+
+Then you can run `terminal-parrot test` to see your new animation (assuming it's on the path).
+
+![Demo of custom animations](parrot-file-demo.gif)
+
 ## Thanks
 
 Idea from seeing [this tweet from @rachsmithtweets](https://twitter.com/rachsmithtweets/status/742785722290212868)
