@@ -50,7 +50,7 @@ You can also build a docker image locally and run it in a container with...
 
 ### Quitting
 
-Hit the escape key to quit.
+Hit the escape or "q" key to quit.
 
 ### -loops
 
