@@ -1,15 +1,44 @@
 package main
 
-var Animations map[string]Animation
+import (
+	"os"
+	"path/filepath"
+)
 
-func init() {
-	Animations = make(map[string]Animation)
-	Animations["parrot"] = Animation{
-		Metadata: map[string]string{
-			"description": "The classic Party Parrot.",
-		},
-		Frames: [][]byte{
-			[]byte(`                        .cccc;;cc;';c.
+type Inventory map[string]Animation
+
+func (i Inventory) LoadFromPaths(paths []string) error {
+	for _, path := range paths {
+		files, err := os.ReadDir(path)
+		if err != nil {
+			if os.IsNotExist(err) {
+				continue
+			}
+			return err
+		}
+
+		for _, file := range files {
+			if !file.IsDir() {
+				animation, err := LoadFromFile(filepath.Join(path, file.Name()))
+				if err != nil {
+					return err
+				}
+				i[file.Name()] = *animation
+			}
+		}
+	}
+
+	return nil
+}
+
+func NewInventory() Inventory {
+	return Inventory{
+		"parrot": Animation{
+			Metadata: map[string]string{
+				"description": "The classic Party Parrot.",
+			},
+			Frames: [][]byte{
+				[]byte(`                        .cccc;;cc;';c.
                       .,:dkdc:;;:c:,:d:.
                      .loc'.,cc::::::,..,:.
                    .cl;....;dkdccc::,...c;
@@ -28,7 +57,7 @@ func init() {
 ,dx:..;lllllllllllllllllllllllllllllllloc'...
 cNO;........................................
 `),
-			[]byte(`                .ckx;'........':c.
+				[]byte(`                .ckx;'........':c.
              .,:c:c:::oxxocoo::::,',.
             .odc'..:lkkoolllllo;..;d,
             ;c..:o:..;:..',;'.......;.
@@ -47,7 +76,7 @@ cNO;........................................
 :0o...:dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxo,.:,
 cNo........................................;'
 `),
-			[]byte(`            .cc;.  ...  .;c.
+				[]byte(`            .cc;.  ...  .;c.
          .,,cc:cc:lxxxl:ccc:;,.
         .lo;...lKKklllookl..cO;
       .cl;.,;'.okl;...'.;,..';:.
@@ -66,7 +95,7 @@ cNo........................................;'
   co..:dddddddddddddddddddddddddddddddddl:;''::.
   co..........................................."
 `),
-			[]byte(`           .ccccccc.
+				[]byte(`           .ccccccc.
       .,,,;cooolccol;;,,.
      .dOx;..;lllll;..;xOd.
    .cdo,',loOXXXXXkll;';odc.
@@ -85,7 +114,7 @@ cNo..lXXXXXXXXXOolkXXXXXXXXXkl;..;:.;.
   ';.:xxxxxocccoxxxxxxxxxxxxxxxxxxxxxxl::'.';;.
   ';........................................;l'
 `),
-			[]byte(`
+				[]byte(`
         .;:;;,.,;;::,.
      .;':;........'co:.
    .clc;'':cllllc::,.':c.
@@ -104,7 +133,7 @@ o..,l;'''''';dkkkkkkkkkkkkkkkkkkkkdlc,..;lc.
 o..;lc;;;;;;,,;clllllllllllllllllllllc'..,:c.
 o..........................................;'
 `),
-			[]byte(`
+				[]byte(`
            .,,,,,,,,,.
          .ckKxodooxOOdcc.
       .cclooc'....';;cool.
@@ -123,7 +152,7 @@ KOc,l;''''''';lldkkkkkkkkkkkkkkkkkc..;lc.
 xx:':;;;;,.,,...,;;cllllllllllllllc;'.;oo,
 cNo.....................................oc
 `),
-			[]byte(`
+				[]byte(`
 
                    .ccccccc.
                .ccckNKOOOOkdcc.
@@ -142,7 +171,7 @@ cNo.....................................oc
 ,dl,.'cooc:::,....,::coooooooooooc'.c:
 cNo.................................oc
 `),
-			[]byte(`
+				[]byte(`
 
 
                         .cccccccc.
@@ -161,7 +190,7 @@ cNo.................................oc
 ,do:'..,:llllll:;;;;;;,..,;:lllllllll;..oc
 cNo.....................................oc
 `),
-			[]byte(`
+				[]byte(`
 
                               .ccccc.
                          .cc;'coooxkl;.
@@ -180,7 +209,7 @@ cNo.....................................oc
 occ'..',:cccccccccccc:;;;;;;;;:ccccccccc,.'c,
 Ol;......................................;l'
 `),
-			[]byte(`
+				[]byte(`
                               ,ddoodd,
                          .cc' ,ooccoo,'cc.
                       .ccldo;....,,...;oxdc.
@@ -199,6 +228,7 @@ Ol;......................................;l'
 ,dl::,..,cccccccccccccccccccccccccccccccc:;':xx,
 cNd.........................................;lOc
 `),
+			},
 		},
 	}
 }
