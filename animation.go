@@ -8,9 +8,6 @@ import (
 	"strings"
 )
 
-//go:embed parrot
-var parrot []byte
-
 type Animation struct {
 	Metadata map[string]string
 	Frames   [][]byte
