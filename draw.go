@@ -1,21 +1,22 @@
 package main
 
-import "github.com/nsf/termbox-go"
-import "strings"
+import (
+	"bytes"
+	"slices"
+
+	"github.com/nsf/termbox-go"
+)
 
 var frame_index = 0
 
-func reverse(lines []string) []string {
-	newLines := make([]string, len(lines))
-	for i, j := 0, len(lines)-1; i < j; i, j = i+1, j-1 {
-		newLines[i], newLines[j] = lines[j], lines[i]
-	}
-	return newLines
+func reverse(lines [][]byte) [][]byte {
+	slices.Reverse(lines)
+	return lines
 }
 
-func draw(orientation string) {
+func draw(animation Animation, orientation string) {
 	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
-	lines := strings.Split(frames[frame_index], "\n")
+	lines := bytes.Split(animation.Frames[frame_index], []byte{'\n'})
 
 	if orientation == "aussie" {
 		lines = reverse(lines)
@@ -23,13 +24,13 @@ func draw(orientation string) {
 
 	for x, line := range lines {
 		for y, cell := range line {
-			termbox.SetCell(y, x, cell, colors[frame_index], termbox.ColorDefault)
+			termbox.SetCell(y, x, rune(cell), colors[frame_index], termbox.ColorDefault)
 		}
 	}
 
 	termbox.Flush()
 	frame_index++
-	if frame_index == num_frames {
+	if frame_index == len(animation.Frames) {
 		frame_index = 0
 	}
 }
