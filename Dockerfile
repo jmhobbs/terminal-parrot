@@ -1,11 +1,13 @@
-FROM golang:alpine3.7
+FROM golang:alpine
 WORKDIR /project
-COPY *.go ./
 RUN apk update && apk add --no-cache git
-RUN go get github.com/nsf/termbox-go
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o parrot parrot.go data.go draw.go
+COPY go.* ./
+RUN go mod download
+COPY *.go ./
+RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' -o parrot .
 
 FROM scratch
 COPY --from=0 /project/parrot /parrot
+COPY animations/ /etc/terminal-parrot
 ENTRYPOINT ["/parrot"]
 
