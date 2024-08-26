@@ -68,11 +68,11 @@ Use `-orientation aussie` for our friends down under.
 
 You can add additional animations without re-compiling by adding a plain text file somewhere on the path (by default `/etc/terminal-parrot` or `/opt/homebrew/etc/terminal-parrot`).
 
-This file should contain the frames, separated by lines containing `!--FRAME--!`.
+This file should contain the frames, separated by lines containing `!--FRAME--!`.  The filename must end with `.animation`.
 
 The first segment of the file is reserved for metadata, which is key-value pairs separated by `:`.
 
-For example, the following file, named `test` would add a new animation called `test`:
+For example, the following file, named `test.animation` would add a new animation called `test`:
 
 ```
 description: A test animation!
