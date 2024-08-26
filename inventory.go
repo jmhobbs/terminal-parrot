@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type Inventory map[string]Animation
@@ -18,12 +19,12 @@ func (i Inventory) LoadFromPaths(paths []string) error {
 		}
 
 		for _, file := range files {
-			if !file.IsDir() {
+			if !file.IsDir() && strings.HasSuffix(file.Name(), ".animation") {
 				animation, err := LoadFromFile(filepath.Join(path, file.Name()))
 				if err != nil {
 					return err
 				}
-				i[file.Name()] = *animation
+				i[strings.TrimSuffix(file.Name(), ".animation")] = *animation
 			}
 		}
 	}
