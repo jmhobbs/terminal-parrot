@@ -31,7 +31,9 @@ There is a tap for this as well, it's `jmhobbs/parrot`
 
     brew tap jmhobbs/parrot
     brew install terminal-parrot
-    
+
+The command will be installed as `parrot`, rather than `terminal-parrot`.
+
 ### Snap Install
 
 ```$ sudo snap install terminal-parrot```
