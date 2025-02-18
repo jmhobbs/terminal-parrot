@@ -1,4 +1,4 @@
-[![terminal-parrot](https://snapcraft.io/terminal-parrot/badge.svg)](https://snapcraft.io/terminal-parrot)
+[![terminal-parrot](https://snapcraft.io/terminal-parrot/badge.svg)](https://snapcraft.io/terminal-parrot) [![🧪 Snap Builds](https://github.com/kz6fittycent/terminal-parrot/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/kz6fittycent/terminal-parrot/actions/workflows/test-snap-can-build.yml)
 
 # :parrot: for your terminal
 
