@@ -7,17 +7,32 @@ description: |
   To quit, hit the `ESC` key
   Enjoy! 
 
-license: MIT
+contact: https://github.com/kz6fittycent/terminal-parrot/issues
+issues: https://github.com/kz6fittycent/terminal-parrot/issues
+source-code: https://github.com/jmhobbs/terminal-parrot
+donation: https://www.patreon.com/kz6fittycent
 
-base: core22
+license: MIT
+base: core24
 grade: stable
 confinement: strict
 
-architectures:
-  - build-on: amd64
-  - build-on: arm64
-  - build-on: armhf
-  - build-on: s390x
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+  arm64:
+    build-on: [arm64]
+    build-for: [arm64]
+  armhf:
+    build-on: [armhf]
+    build-for: [armhf]
+  s390x:
+    build-on: [s390x]
+    build-for: [s390x]
+  ppc64el:
+    build-on: [ppc64el]
+    build-for: [ppc64el]
 
 apps:
   terminal-parrot:
@@ -31,5 +46,5 @@ parts:
     build-snaps:
       - go
     override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
