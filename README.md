@@ -1,3 +1,5 @@
+[![terminal-parrot](https://snapcraft.io/terminal-parrot/badge.svg)](https://snapcraft.io/terminal-parrot) [![🧪 Snap Builds](https://github.com/kz6fittycent/terminal-parrot/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/kz6fittycent/terminal-parrot/actions/workflows/test-snap-can-build.yml)
+
 # :parrot: for your terminal
 
 ![demo](http://dropit.velvetcache.org.s3.amazonaws.com/jmhobbs/NzczFOYq4g/termbox-parrot-color.gif)
@@ -31,6 +33,10 @@ There is a tap for this as well, it's `jmhobbs/parrot`
 
     brew tap jmhobbs/parrot
     brew install terminal-parrot
+    
+### Snap Install
+
+```$ sudo snap install terminal-parrot```
 
 The command will be installed as `parrot`, rather than `terminal-parrot`.
 
