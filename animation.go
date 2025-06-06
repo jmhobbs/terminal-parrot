@@ -4,7 +4,7 @@ import (
 	"bytes"
 	_ "embed"
 	"fmt"
-	"os"
+	"io/fs"
 	"strings"
 )
 
@@ -13,8 +13,8 @@ type Animation struct {
 	Frames   [][]byte
 }
 
-func LoadFromFile(file string) (*Animation, error) {
-	b, err := os.ReadFile(file)
+func LoadFromFile(files fs.FS, path string) (*Animation, error) {
+	b, err := fs.ReadFile(files, path)
 	if err != nil {
 		return nil, err
 	}
