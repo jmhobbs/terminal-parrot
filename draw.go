@@ -16,7 +16,7 @@ func reverse(lines [][]byte) [][]byte {
 }
 
 func draw(animation Animation, orientation string) {
-	termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
+	_ = termbox.Clear(termbox.ColorDefault, termbox.ColorDefault)
 	lines := bytes.Split(animation.Frames[frame_index], []byte{'\n'})
 
 	if orientation == "aussie" {
@@ -29,7 +29,7 @@ func draw(animation Animation, orientation string) {
 		}
 	}
 
-	termbox.Flush()
+	_ = termbox.Flush()
 	frame_index++
 	color_index++
 	if frame_index >= len(animation.Frames) {

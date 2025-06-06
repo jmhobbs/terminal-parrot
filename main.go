@@ -33,7 +33,8 @@ func main() {
 	}
 
 	if *list {
-		fmt.Println("Available animations:\n")
+		fmt.Println("Available animations:")
+		fmt.Println("")
 		longestName := 0
 		for name := range inventory {
 			longestName = max(longestName, len(name))

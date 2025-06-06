@@ -1,9 +1,12 @@
 package main
 
-import "testing"
+import (
+	"os"
+	"testing"
+)
 
 func Test_LoadFromFile(t *testing.T) {
-	a, err := LoadFromFile("parrot")
+	a, err := LoadFromFile(os.DirFS("animations"), "parrot.animation")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -39,7 +42,7 @@ func Test_LoadFromBytes(t *testing.T) {
 	})
 
 	t.Run("valid", func(t *testing.T) {
-		a, err := LoadFromBytes([]byte("A\n!--FRAME--!\nB\n"))
+		a, err := LoadFromBytes([]byte("description: test\n!--FRAME--!\nA\n!--FRAME--!\nB\n"))
 		if err != nil {
 			t.Fatal(err)
 		}
