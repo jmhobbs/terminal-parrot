@@ -23,7 +23,13 @@ func LoadFromFile(files fs.FS, path string) (*Animation, error) {
 }
 
 func LoadFromBytes(b []byte) (*Animation, error) {
-	frames := bytes.Split(b, []byte("!--FRAME--!\n"))
+	// Handle both Unix (\n) and Windows (\r\n) line endings
+	separator := []byte("!--FRAME--!\n")
+	if bytes.Contains(b, []byte("!--FRAME--!\r\n")) {
+		separator = []byte("!--FRAME--!\r\n")
+	}
+
+	frames := bytes.Split(b, separator)
 
 	if len(frames) <= 2 {
 		return nil, fmt.Errorf("no frames found")
